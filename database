@@ -1,0 +1,2 @@
+UPDATE user set plugin='mysql_native_password' WHERE User='root';
+UPDATE mysql.user set authentication_string=PASSWORD('Develop888###') where user='root';

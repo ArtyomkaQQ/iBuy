@@ -1,0 +1,51 @@
+package com.dev.ibuy.security;
+
+import com.dev.ibuy.exception.keyException;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.PostConstruct;
+import java.io.IOException;
+import java.io.InputStream;
+import java.security.*;
+import java.security.cert.CertificateException;
+
+@Service
+public class JwtProvider {
+
+    private Key key;
+
+    @PostConstruct
+    public void init() {
+        this.key = Keys.secretKeyFor(SignatureAlgorithm.HS512);
+    }
+
+    public String generateToken(Authentication authentication) {
+        User principal = (User) authentication.getPrincipal();
+        return Jwts.builder()
+                .setSubject(principal.getUsername())
+                .signWith(this.key)
+                .compact();
+    }
+
+
+    public boolean validateToken(String jwt) {
+        Jwts.parser().setSigningKey(this.key).parseClaimsJws(jwt);
+        return true;
+    }
+
+    public String getUsernameFromJWT(String token) {
+        Claims claims = Jwts.parser()
+                .setSigningKey(this.key)
+                .parseClaimsJws(token)
+                .getBody();
+
+        return claims.getSubject();
+    }
+
+}
