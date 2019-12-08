@@ -19,9 +19,13 @@ public class IbuyApplication implements CommandLineRunner {
 
 
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args) {
 		productRepository.save(new Product(1L, "Lenovo laptop", 1200, 10));
 		productRepository.save(new Product(2L, "HP laptop", 1300, 10));
+		productRepository.save(new Product(3L, "Lenovo laptop", 1200, 10));
+		productRepository.save(new Product(4L, "HP laptop", 1300, 10));
+		productRepository.save(new Product(5L, "Lenovo laptop", 1200, 10));
+		productRepository.save(new Product(6L, "HP laptop", 1300, 10));
 
 		productRepository.findAll().forEach(p -> System.out.println(p.toString()));
 	}
