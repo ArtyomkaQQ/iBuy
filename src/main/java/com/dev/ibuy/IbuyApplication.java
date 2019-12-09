@@ -27,6 +27,13 @@ public class IbuyApplication implements CommandLineRunner {
 		productRepository.save(new Product(5L, "Lenovo laptop", 1200, 10));
 		productRepository.save(new Product(6L, "HP laptop", 1300, 10));
 
+		productRepository.save(new Product(7L, "Lenovo laptop", 1200, 10));
+		productRepository.save(new Product(8L, "HP laptop", 1300, 10));
+		productRepository.save(new Product(9L, "Lenovo laptop", 1200, 10));
+		productRepository.save(new Product(10L, "HP laptop", 1300, 10));
+		productRepository.save(new Product(11L, "Lenovo laptop", 1200, 10));
+		productRepository.save(new Product(12L, "HP laptop", 1300, 10));
+
 		productRepository.findAll().forEach(p -> System.out.println(p.toString()));
 	}
 
