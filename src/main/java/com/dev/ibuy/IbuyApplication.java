@@ -1,6 +1,7 @@
 package com.dev.ibuy;
 
 import com.dev.ibuy.model.Product;
+import com.dev.ibuy.model.User;
 import com.dev.ibuy.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -25,6 +26,7 @@ public class IbuyApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) {
 		repositoryRestConfiguration.exposeIdsFor(Product.class);
+		repositoryRestConfiguration.exposeIdsFor(User.class);
 
 		productRepository.save(new Product(1L, "Lenovo laptop", 1200, 10));
 		productRepository.save(new Product(2L, "HP laptop", 1300, 10));
