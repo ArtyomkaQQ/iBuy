@@ -1,4 +1,4 @@
-package com.dev.ibuy.model;
+package com.dev.ibuy.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

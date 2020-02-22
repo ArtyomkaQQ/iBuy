@@ -1,4 +1,4 @@
-package com.dev.ibuy.model;
+package com.dev.ibuy.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

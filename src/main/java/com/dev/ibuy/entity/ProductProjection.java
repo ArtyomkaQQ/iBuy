@@ -1,4 +1,4 @@
-package com.dev.ibuy.model;
+package com.dev.ibuy.entity;
 
 import org.springframework.data.rest.core.config.Projection;
 

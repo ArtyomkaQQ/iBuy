@@ -1,7 +1,7 @@
 package com.dev.ibuy;
 
-import com.dev.ibuy.model.Product;
-import com.dev.ibuy.model.User;
+import com.dev.ibuy.entity.Product;
+import com.dev.ibuy.entity.User;
 import com.dev.ibuy.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

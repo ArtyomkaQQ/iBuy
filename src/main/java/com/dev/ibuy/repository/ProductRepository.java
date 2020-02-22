@@ -1,6 +1,6 @@
 package com.dev.ibuy.repository;
 
-import com.dev.ibuy.model.Product;
+import com.dev.ibuy.entity.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

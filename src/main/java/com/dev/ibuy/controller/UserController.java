@@ -1,6 +1,6 @@
 package com.dev.ibuy.controller;
 
-import com.dev.ibuy.model.User;
+import com.dev.ibuy.entity.User;
 import com.dev.ibuy.repository.UserRepository;
 import org.springframework.web.bind.annotation.*;
 

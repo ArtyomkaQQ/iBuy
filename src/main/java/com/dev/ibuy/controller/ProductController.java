@@ -1,6 +1,6 @@
 package com.dev.ibuy.controller;
 
-import com.dev.ibuy.model.Product;
+import com.dev.ibuy.entity.Product;
 import com.dev.ibuy.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
