@@ -2,7 +2,7 @@ package com.dev.ibuy.service;
 
 import com.dev.ibuy.dto.LoginRequest;
 import com.dev.ibuy.dto.RegisterRequest;
-import com.dev.ibuy.model.User;
+import com.dev.ibuy.entity.User;
 import com.dev.ibuy.repository.UserRepository;
 import com.dev.ibuy.security.JwtProvider;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package com.dev.ibuy.service;
 
-import com.dev.ibuy.model.User;
+import com.dev.ibuy.entity.User;
 import com.dev.ibuy.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
