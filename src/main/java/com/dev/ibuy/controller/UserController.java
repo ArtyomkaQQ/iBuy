@@ -4,6 +4,8 @@ import com.dev.ibuy.entity.User;
 import com.dev.ibuy.repository.UserRepository;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController()
 @RequestMapping(value = "/list_users")
 public class UserController {
@@ -12,6 +14,11 @@ public class UserController {
 
     public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
+    }
+
+    @GetMapping()
+    public List<User> listUsers() {
+        return userRepository.findAll();
     }
 
     @GetMapping(value = "/{id}")
