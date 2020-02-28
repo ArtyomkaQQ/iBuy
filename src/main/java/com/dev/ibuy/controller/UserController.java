@@ -15,12 +15,12 @@ public class UserController {
     }
 
     @GetMapping(value = "/{id}")
-    public User getProduct(@PathVariable(name = "id") Long id) {
-        return userRepository.findById(id).get();
+    public User getUser(@PathVariable(name = "id") Long id) {
+        return userRepository.findById(id).orElse(null);
     }
 
     @DeleteMapping(value = "/{id}")
-    public void delete(@PathVariable(name = "id") Long id) {
+    public void deleteUser(@PathVariable(name = "id") Long id) {
         userRepository.deleteById(id);
     }
 

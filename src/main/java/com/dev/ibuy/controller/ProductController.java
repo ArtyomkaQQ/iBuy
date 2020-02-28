@@ -21,23 +21,23 @@ public class ProductController {
 
     @GetMapping(value = "/{id}")
     public Product getProduct(@PathVariable(name = "id") Long id) {
-        return productRepository.findById(id).get();
+        return productRepository.findById(id).orElse(null);
     }
 
     @PutMapping(value = "/{id}")
-    public Product update(@PathVariable(name = "id") Long id, @RequestBody Product product) {
+    public Product updateProduct(@PathVariable(name = "id") Long id, @RequestBody Product product) {
         product.setId(id);
 
         return productRepository.save(product);
     }
 
     @PostMapping(value = "/{id}")
-    public Product save(@RequestBody Product product) {
+    public Product saveProduct(@RequestBody Product product) {
         return productRepository.save(product);
     }
 
     @DeleteMapping(value = "/{id}")
-    public void delete(@PathVariable(name = "id") Long id) {
+    public void deleteProduct(@PathVariable(name = "id") Long id) {
         productRepository.deleteById(id);
     }
 
