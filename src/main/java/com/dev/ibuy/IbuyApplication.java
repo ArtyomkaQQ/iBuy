@@ -9,6 +9,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 
+import java.util.Set;
+
 @SpringBootApplication
 public class IbuyApplication implements CommandLineRunner {
 
@@ -28,20 +30,19 @@ public class IbuyApplication implements CommandLineRunner {
 		repositoryRestConfiguration.exposeIdsFor(Product.class);
 		repositoryRestConfiguration.exposeIdsFor(User.class);
 
-		productRepository.save(new Product(1L, "Lenovo laptop", 1200, 10));
-		productRepository.save(new Product(2L, "HP laptop", 1300, 10));
-		productRepository.save(new Product(3L, "Lenovo laptop", 1200, 10));
-		productRepository.save(new Product(4L, "HP laptop", 1300, 10));
-		productRepository.save(new Product(5L, "Lenovo laptop", 1200, 10));
-		productRepository.save(new Product(6L, "HP laptop", 1300, 10));
+		Set<Product> products = Set.of(new Product(1L, "Lenovo laptop", 1200, 10),
+				new Product(2L, "HP laptop", 1300, 10),
+				new Product(3L, "Lenovo laptop", 1200, 10),
+				new Product(4L, "HP laptop", 1300, 10),
+				new Product(5L, "Lenovo laptop", 1200, 10),
+				new Product(6L, "HP laptop", 1300, 10),
+				new Product(7L, "Lenovo laptop", 1200, 10),
+				new Product(8L, "HP laptop", 1300, 10),
+				new Product(9L, "Lenovo laptop", 1200, 10),
+				new Product(10L, "HP laptop", 1300, 10)
+				);
 
-		productRepository.save(new Product(7L, "Lenovo laptop", 1200, 10));
-		productRepository.save(new Product(8L, "HP laptop", 1300, 10));
-		productRepository.save(new Product(9L, "Lenovo laptop", 1200, 10));
-		productRepository.save(new Product(10L, "HP laptop", 1300, 10));
-		productRepository.save(new Product(11L, "Lenovo laptop", 1200, 10));
-		productRepository.save(new Product(12L, "HP laptop", 1300, 10));
-
+		productRepository.saveAll(products);
 		productRepository.findAll().forEach(p -> System.out.println(p.toString()));
 	}
 
