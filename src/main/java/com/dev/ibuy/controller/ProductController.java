@@ -21,7 +21,7 @@ public class ProductController {
 
     @GetMapping(value = "/{id}")
     public Product getProduct(@PathVariable(name = "id") Long id) {
-        return productRepository.findById(id).orElse(null);
+        return productRepository.findById(id).get();
     }
 
     @PutMapping(value = "/{id}")
