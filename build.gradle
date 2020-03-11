@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.2.1.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
+	id "org.flywaydb.flyway" version "6.3.0"
 }
 
 group = 'com.dev'
@@ -48,6 +49,12 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+}
+
+flyway {
+	url = 'jdbc:mysql://localhost/ibuy'
+	user = 'root'
+	password = 'password'
 }
 
 test {
